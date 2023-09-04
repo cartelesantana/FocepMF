@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="374e8224-9f00-44cc-86e5-66bf2fe9b527" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="2UeeWxh5udhi098oGDWtU1uTpNX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Darlin\pages" />
+      <recent name="C:\xampp\htdocs\Darlin\assets\img" />
+      <recent name="C:\xampp\htdocs\Darlin\pages\forms" />
+      <recent name="C:\xampp\htdocs\Darlin\pages\errorpages" />
+      <recent name="C:\xampp\htdocs\Darlin" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="374e8224-9f00-44cc-86e5-66bf2fe9b527" name="Default Changelist" comment="" />
+      <created>1693304510027</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693304510027</updated>
+      <workItem from="1693304511652" duration="6413000" />
+      <workItem from="1693381016247" duration="10020000" />
+      <workItem from="1693735851193" duration="78000" />
+      <workItem from="1693735984510" duration="17763000" />
+      <workItem from="1693813287198" duration="1947000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1230" y="-42" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1693385057375">
+      <screen x="-1920" y="-313" width="1920" height="1050" />
+    </state>
+    <state x="-1230" y="-42" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738/-1920.-313.1920.1050@-1920.-313.1920.1050" timestamp="1693385057375" />
+    <state x="1946" y="124" key="FileChooserDialogImpl" timestamp="1693735979416">
+      <screen x="1366" y="-65" width="1600" height="870" />
+    </state>
+    <state x="1946" y="124" key="FileChooserDialogImpl/0.0.1366.738/1366.-65.1600.870@1366.-65.1600.870" timestamp="1693735979416" />
+    <state x="2028" y="306" key="NewPhpFileDialog" timestamp="1693758992243">
+      <screen x="1366" y="-65" width="1600" height="870" />
+    </state>
+    <state x="-1126" y="135" key="NewPhpFileDialog/0.0.1366.738/-1920.-313.1920.1050@-1920.-313.1920.1050" timestamp="1693384898197" />
+    <state x="565" y="315" key="NewPhpFileDialog/0.0.1366.738/1366.-65.1600.870@0.0.1366.738" timestamp="1693747797216" />
+    <state x="2028" y="306" key="NewPhpFileDialog/0.0.1366.738/1366.-65.1600.870@1366.-65.1600.870" timestamp="1693758992243" />
+    <state x="1822" y="165" key="run.anything.popup" timestamp="1693736231881">
+      <screen x="1366" y="-65" width="1600" height="870" />
+    </state>
+    <state x="1822" y="165" key="run.anything.popup/0.0.1366.738/1366.-65.1600.870@1366.-65.1600.870" timestamp="1693736231881" />
+  </component>
+</project>
