@@ -27,11 +27,11 @@
                                     <div class="card-body">
                                         <form action="controls/LoginAuth.php" method="post">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="text" placeholder="name@example.com" />
+                                                <input class="form-control" name="inputName" type="text" placeholder="name@example.com" />
                                                 <label for="inputEmail">UserName</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
+                                                <input class="form-control" name="inputPassword" type="password" placeholder="Password" />
                                                 <label for="inputPassword">Mot De Passe</label>
                                             </div>
                                             <div class="form-floating mb-3" >

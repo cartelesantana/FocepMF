@@ -14,9 +14,7 @@ drop table if exists Membre;
 
 drop table if exists Paiement;
 
-/*==============================================================*/
-/* Table : Administrateurs                                      */
-/*==============================================================*/
+
 create table Administrateurs
 (
    matriculeAdm         varchar(200) not null,
@@ -28,9 +26,7 @@ create table Administrateurs
    primary key (matriculeAdm)
 );
 
-/*==============================================================*/
-/* Table : Agent                                                */
-/*==============================================================*/
+
 create table Agent
 (
    matriculeAgt         varchar(200) not null,
@@ -43,9 +39,7 @@ create table Agent
    primary key (matriculeAgt)
 );
 
-/*==============================================================*/
-/* Table : Collecte                                             */
-/*==============================================================*/
+
 create table Collecte
 (
    idCollecte           varchar(200) not null,
@@ -56,9 +50,7 @@ create table Collecte
    primary key (idCollecte)
 );
 
-/*==============================================================*/
-/* Table : Compte                                               */
-/*==============================================================*/
+
 create table Compte
 (
    numCompte            varchar(200) not null,
@@ -68,9 +60,6 @@ create table Compte
    primary key (numCompte)
 );
 
-/*==============================================================*/
-/* Table : Emprunt                                              */
-/*==============================================================*/
 create table Emprunt
 (
    idEmprunt            varchar(200) not null,
@@ -82,9 +71,7 @@ create table Emprunt
    primary key (idEmprunt)
 );
 
-/*==============================================================*/
-/* Table : Membre                                               */
-/*==============================================================*/
+
 create table Membre
 (
    idMembre             varchar(200) not null,
@@ -98,9 +85,7 @@ create table Membre
    primary key (idMembre)
 );
 
-/*==============================================================*/
-/* Table : Paiement                                             */
-/*==============================================================*/
+
 create table Paiement
 (
    idPaiement           varchar(200) not null,

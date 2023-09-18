@@ -21,17 +21,17 @@
                     formulaire d'ajout d'un membre
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form method="post" action="../controls/newMember.php">
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Entrez le nom" />
+                                    <input class="form-control" name="inputFirstName" type="text" placeholder="Entrez le nom" />
                                     <label for="inputFirstName">Nom</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input class="form-control" id="inputLastName" type="text" placeholder="Entrez le prenom" />
+                                    <input class="form-control" name="inputLastName" type="text" placeholder="Entrez le prenom" />
                                     <label for="inputLastName">Prenom</label>
                                 </div>
                             </div>
@@ -39,13 +39,13 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control" id="profession" type="text" placeholder="Profession" />
+                                    <input class="form-control" name="profession" type="text" placeholder="Profession" />
                                     <label for="profession">profession</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input class="form-control" id="cni" type="number" placeholder="Numero CNI" />
+                                    <input class="form-control" name="cni" type="number" placeholder="Numero CNI" />
                                     <label for="cni">CNI</label>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control" name =" adresse"id="adresse" type="text" placeholder="Adresse Complete" />
+                                    <input class="form-control" name =" adresse"name="adresse" type="text" placeholder="Adresse Complete" />
                                     <label for="adresse">Adresse</label>
                                 </div>
                             </div>
