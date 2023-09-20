@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,10 +22,18 @@
                                     <div class="card-body">
                                         <i class="fas fa-user"></i>
                                         <br>Total Membres<br>
-                                        <h2>???</h2>
+                                        <h2>
+                                            <?php
+                                            include "../controls/db.php";
+                                            $memberQuery="select count(*) from membre";
+                                            $totalMbr=$pdo->query($memberQuery);
+                                            print_r($totalMbr->fetchColumn());
+                                            ?>
+                                        </h2>
+                                        </h2>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between" style="font-weight: 800">
-                                        <a  class="small text-white stretched-link" href="#">Voir Plus</a>
+                                        <a  class="small text-white stretched-link" href="../pages/consultMember.php?admin=<?php echo $_GET['admin']?>">Voir Plus</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -34,7 +43,15 @@
                                     <div class="card-body">
                                         <i class="fa-solid fa-user-plus"></i>
                                         <br>Nouveaux Membres<br>
-                                        <h2>???</h2>
+                                        <h2>
+                                            <?php
+                                            include "../controls/db.php";
+                                            $date=date('yyyy/mm/dd');
+                                            $nemMemberQuery="select count(*) from membre where $date<=joinDate<$date-5";
+                                            $totalMbr=$pdo->query($memberQuery);
+                                            print_r($totalMbr->fetchColumn());
+                                            ?>
+                                            </h2>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between" style="font-weight: 800">
                                         <a  class="small text-white stretched-link" href="#">Voir Plus</a>
@@ -47,7 +64,14 @@
                                     <div class="card-body">
                                         <i class="fas fa-money-bill-alt"></i>
                                         <br>Paiements Recents<br>
-                                        <h2>???</h2>
+                                        <h2>
+                                            <?php
+                                            include "../controls/db.php";
+                                            $date=date('yyyy/mm/dd');
+                                            $PaiementQuery= $pdo->exec("select count(*) from paiement where $date > datePaiement<=$date-5 ");
+                                            echo $PaiementQuery;
+                                            ?>
+                                        </h2>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between" style="font-weight: 800">
                                         <a  class="small text-white stretched-link" href="#">Voir Plus</a>
@@ -60,7 +84,14 @@
                                     <div class="card-body">
                                         <i class="fas fa-money-check-alt"></i><br>
                                         Emprunts Impayés<br>
-                                        <h2>???</h2>
+                                        <h2>
+                                            <?php
+                                            include "../controls/db.php";
+                                            $date=date('yyyy/mm/dd');
+                                            $EmpruntQuery= $pdo->exec("select count(*) from emprunt where statut='impayé'");
+                                            echo $EmpruntQuery;
+                                            ?>
+                                        </h2>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between" style="font-weight: 800">
                                         <a  class="small text-white stretched-link" href="#">Voir Plus</a>
@@ -78,34 +109,51 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Id Membre</th>
+                                            <th>Nom</th>
+                                            <th>Prenom</th>
+                                            <th>Adresse</th>
+                                            <th>Localisation</th>
+                                            <th>numéro Tel</th>
+                                            <th>Numéro Cni</th>
+                                            <th>Numéro Compte</th>
+                                            <th>date inscription</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Id Membre</th>
+                                            <th>Nom</th>
+                                            <th>Prenom</th>
+                                            <th>Adresse</th>
+                                            <th>Localisation</th>
+                                            <th>numéro Tel</th>
+                                            <th>Numéro Cni</th>
+                                            <th>Numéro Compte</th>
+                                            <th>date inscription</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                        </tr>
 
+                                    <?php
+                                    include "../controls/db.php";
+                                    $members= $pdo->query("select * from membre");
+                                        foreach($members as $row) {
+                                            echo "
+                                        <tr>
+                                             <td>$row[idMembre]</td>
+                                            <td>$row[nomMbre]</td>
+                                            <td>$row[prenomMbre]</td>
+                                            <td>$row[adresseMbre]</td>
+                                            <td>$row[localisation]</td>
+                                            <td>$row[telephoneMbre]</td>
+                                            <td>$row[numCni]</td>
+                                            <td>$row[numCompte]</td>
+                                            <td>$row[joinDate]</td>
+                                        </tr>
+                                            ";
+                                        }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>

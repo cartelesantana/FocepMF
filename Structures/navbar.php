@@ -16,13 +16,23 @@
         <li class="nav-item dropdown" >
             <a style="color: white"class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-user fa-fw"></i>
-                <b>username</b>
+                <b>
+                    <?php
+                        include "../controls/db.php";
+                        $matricule=$_GET['admin'];
+                        $stmt=$pdo->prepare("Select * From administrateurs where matriculeAdm=?");
+                        $stmt->execute([$matricule]);
+                        $admin=$stmt->fetch();
+                        $result=$admin['nomAdm'];
+                        echo $result;
+                    ?>
+                </b>
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#!">Settings</a></li>
                 <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#!">Logout</a></li>
+                <li><a class="dropdown-item" href="../controls/Logout.php">Logout</a></li>
             </ul>
         </li>
     </ul>

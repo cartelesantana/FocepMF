@@ -21,7 +21,7 @@
                     formulaire d'ajout d'un membre
                 </div>
                 <div class="card-body">
-                    <form method="post" action="../controls/newMember.php">
+                    <form method="post" action="../controls/newMember.php?admin=<?php echo $_GET['admin']?>">
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
@@ -53,7 +53,7 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control" name =" adresse"name="adresse" type="text" placeholder="Adresse Complete" />
+                                    <input class="form-control" name ="adresse"name="adresse" type="text" placeholder="Adresse Complete" />
                                     <label for="adresse">Adresse</label>
                                 </div>
                             </div>
@@ -64,10 +64,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="inputEmail"name="inputEmail" type="email" placeholder="name@example.com" />
-                            <label for="inputEmail">Email address</label>
-                        </div>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
@@ -77,13 +73,13 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control" id="numcompte"name="numcompte" type="number" placeholder="Numero Compte" />
-                                    <label for="numcompte">Numero de Compte</label>
+                                    <input class="form-control" id="inputEmail"name="inputEmail" type="email" placeholder="name@example.com" />
+                                    <label for="inputEmail">Email address</label>
                                 </div>
                             </div>
                         </div>
                         <div class="mt-4 mb-0">
-                            <div class="d-grid"><button type="submit" class="btn btn-primary btn-block" name="ajouter">Ajouter</button></div>
+                            <div class="d-grid"><button type="submit" class="btn btn-primary btn-block" name="ajouter" class="ajouterMembre">Ajouter</button></div>
                         </div>
                     </form>
                 </div>
