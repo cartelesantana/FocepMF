@@ -25,8 +25,6 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Nom</th>
-                            <th>Numero Compte</th>
                             <th>Montant</th>
                             <th>Date</th>
                             <th>Reçu</th>
@@ -35,23 +33,26 @@
                         <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Nom</th>
-                            <th>Numero Compte</th>
                             <th>Montant</th>
                             <th>Date</th>
                             <th>Reçu</th>
                         </tr>
                         </tfoot>
                         <tbody>
-                        <tr>
-                            <td>#</td>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td><a style="color: darkgreen;font-weight: 800" href="#"><i class="fas fa-cloud-download-alt"></i></a></td>
-                        </tr>
-
+                        <?php
+                        include "../controls/db.php";
+                        $paiement= $pdo->query("select * from paiement  order by datePaiement DESC ");
+                        foreach($paiement as $row) {
+                            echo "
+                                        <tr>
+                                            <td>$row[idPaiement]</td>
+                                            <td>$row[montant]</td>
+                                            <td>$row[datePaiement]</td>
+                                            <td><a href=''><i class='fas fa-cloud-download-alt'></i></a></td>
+                                        </tr>
+                                          ";
+                        }
+                        ?>
                         </tbody>
                     </table>
                 </div>

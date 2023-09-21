@@ -45,16 +45,33 @@
                         </tr>
                         </tfoot>
                         <tbody>
-                        <tr>
-                            <td>#</td>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>$320,800</td>
-                            <td><a style="color: darkgreen;font-weight: 800" href="#"><i class="fas fa-cloud-download-alt"></i></a></td>
-                        </tr>
+                        <?php
+                        include "../controls/db.php";
+                        $members= $pdo->query("select * from membre");
+                        $mbrId=$members->fetchColumn(0);
+                        foreach($members as $row) {
 
+                            echo "
+                                        <tr>
+                                            <td>$row[idMembre]</td>
+                                            <td>$row[nomMbre]</td>
+                                            <td>$row[numCni]</td>
+                                            <td>$row[adresseMbre]</td>
+                                            
+                                          ";
+                        }
+                        $emprunt=$pdo->query("select montant from emprunt where idMembre='$mbrId' ");
+                        $montant=$emprunt->fetchColumn(0);
+                        echo "
+                                            <td>$montant</td>
+                                            ";
+                        $solde=$pdo->query("select solde from compte where idMembre='$mbrId' ");
+                        $soldecompte=$solde->fetchColumn(0);
+                        echo "
+                        <td>$soldecompte</td>
+                        <td><a href=''> <i class='fas fa-cloud-download'></i></a></td>
+                        ";
+                        ?>
                         </tbody>
                     </table>
                 </div>
