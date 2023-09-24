@@ -14,21 +14,23 @@
             <div class="sb-sidenav-menu" >
                 <div class="nav" >
                     <div class="sb-sidenav-menu-heading" style="color: white;font-weight: 800">Core</div>
-                    <a class="nav-link" href="Agenthome.php" style="color: darkblue;font-weight: 600">
+                    <a class="nav-link" href="Agenthome.php?agent=<?php echo $_GET['agent']?>" style="color: darkblue;font-weight: 600">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt" style="color: darkblue"></i></div>
                         Dashboard
                     </a>
                     <div class="sb-sidenav-menu-heading" style="color: white;font-weight: 800">Collectes</div>
-                    <a style="color: darkblue;font-weight: 600"class="nav-link" href="collecte.php">
+                    <a style="color: darkblue;font-weight: 600"class="nav-link" href="collecte.php?agent=<?php echo $_GET['agent']?>">
                         <div class="sb-nav-link-icon"><i style="color: darkblue"class="fas fa-plus"></i></div>
                         Nouvelle Collecte
                     </a>
+<!--
                     <a style="color: darkblue;font-weight: 600"class="nav-link" href="mescollecte.php">
                         <div class="sb-nav-link-icon"><i style="color: darkblue" class="fas fa-table"></i></div>
                         Historique
                     </a>
+-->
                     <div class="sb-sidenav-menu-heading" style="color: white;font-weight: 800">Emprunts</div>
-                    <a style="color: darkblue;font-weight: 600"class="nav-link" href="newEmpruntagent.php">
+                    <a style="color: darkblue;font-weight: 600"class="nav-link" href="newEmpruntagent.php?agent=<?php echo $_GET['agent']?>">
                         <div class="sb-nav-link-icon"><i style="color: darkblue"class="fas fa-plus"></i></div>
                         Nouvel Emprunt
                     </a>
@@ -48,7 +50,7 @@
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Table Des Membres
+                    Mes Collectes Du jours
                 </div>
 
                 <div class="card-body">

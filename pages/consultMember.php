@@ -49,28 +49,31 @@
                         include "../controls/db.php";
                         $members= $pdo->query("select * from membre");
                         $mbrId=$members->fetchColumn(0);
-                        foreach($members as $row) {
+                        if(!empty($mbrId)){
+                            foreach($members as $row) {
 
+                                echo "
+                                            <tr>
+                                                <td>$row[idMembre]</td>
+                                                <td>$row[nomMbre]</td>
+                                                <td>$row[numCni]</td>
+                                                <td>$row[adresseMbre]</td>
+                                                
+                                              ";
+                            }
+                            $emprunt=$pdo->query("select montant from emprunt where idMembre='$mbrId' ");
+                            $montant=$emprunt->fetchColumn(0);
                             echo "
-                                        <tr>
-                                            <td>$row[idMembre]</td>
-                                            <td>$row[nomMbre]</td>
-                                            <td>$row[numCni]</td>
-                                            <td>$row[adresseMbre]</td>
-                                            
-                                          ";
+                                                <td>$montant</td>
+                                                ";
+                            $solde=$pdo->query("select solde from compte where idMembre='$mbrId' ");
+                            $soldecompte=$solde->fetchColumn(0);
+                            echo "
+                            <td>$soldecompte</td>
+                            <td><a href=''> <i class='fas fa-cloud-download'></i></a></td>
+                            ";
                         }
-                        $emprunt=$pdo->query("select montant from emprunt where idMembre='$mbrId' ");
-                        $montant=$emprunt->fetchColumn(0);
-                        echo "
-                                            <td>$montant</td>
-                                            ";
-                        $solde=$pdo->query("select solde from compte where idMembre='$mbrId' ");
-                        $soldecompte=$solde->fetchColumn(0);
-                        echo "
-                        <td>$soldecompte</td>
-                        <td><a href=''> <i class='fas fa-cloud-download'></i></a></td>
-                        ";
+                        
                         ?>
                         </tbody>
                     </table>

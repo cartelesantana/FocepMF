@@ -15,7 +15,8 @@ if(isset($_POST['login'])){
            if($res!=null){
             $userPwd=$res['pwd'];
             if(password_verify($pass,$userPwd)){
-                echo"user Connected";
+                $SessionId=$res['matriculeAgt'];
+                    header("location:../pages/Agenthome.php?agent=$SessionId");
             }else{
                 echo" username and password Combination did not match";
             }

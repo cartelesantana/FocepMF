@@ -18,13 +18,25 @@
                 <i class="fas fa-user fa-fw"></i>
                 <b>
                     <?php
-                        include "../controls/db.php";
-                        $matricule=$_GET['admin'];
-                        $stmt=$pdo->prepare("Select * From administrateurs where matriculeAdm=?");
-                        $stmt->execute([$matricule]);
-                        $admin=$stmt->fetch();
-                        $result=$admin['nomAdm'];
-                        echo $result;
+                        if(isset($_GET['admin'])){
+                            include "../controls/db.php";
+                            $matricule=$_GET['admin'];
+                            $stmt=$pdo->prepare("Select * From administrateurs where matriculeAdm=?");
+                            $stmt->execute([$matricule]);
+                            $admin=$stmt->fetch();
+                            $result=$admin['nomAdm'];
+                            echo $result;
+                        }else if(isset($_GET['agent'])){
+                            include "../controls/db.php";
+                            $matricule=$_GET['agent'];
+                            $stmt=$pdo->prepare("Select * From agent where matriculeAgt=?");
+                            $stmt->execute([$matricule]);
+                            $agent=$stmt->fetch();
+                            $result=$agent['nomAgt'];
+                            echo $result; 
+                        }
+
+                        
                     ?>
                 </b>
             </a>

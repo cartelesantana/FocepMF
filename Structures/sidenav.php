@@ -9,9 +9,14 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt" style="color: darkblue"></i></div>
                         Dashboard
                     </a>
+                    
                     <a class="nav-link" href="newCollecte.php" style="color: darkblue;font-weight: 600">
                         <div class="sb-nav-link-icon"><i class="far fa-list-alt" style="color: darkblue"></i></div>
                         Collecte du jour
+                    </a>
+                    <a class="nav-link" href="../pages/newAgent.php?admin=<?php echo $_GET['admin'];?>" style="color: darkblue;font-weight: 600">
+                        <div class="sb-nav-link-icon"><i class="far fa-list-alt" style="color: darkblue"></i></div>
+                        Ajouter un Agent
                     </a>
                     <a class="nav-link" href="newCollecte.php?admin=<?php echo $_GET['admin'];?>" style="color: darkblue;font-weight: 600">
                         <div class="sb-nav-link-icon"><i class="far fa-list-alt" style="color: darkblue"></i></div>
@@ -29,6 +34,7 @@
                             <a style="color: darkblue;font-weight: 600" class="nav-link" href="consultMember.php?admin=<?php echo $_GET['admin'];?>">Consulter</a>
                         </nav>
                     </div>
+                    
 
                     <div class="sb-sidenav-menu-heading" style="color: white;font-weight: 800">Paiements</div>
                     <a style="color: darkblue;font-weight: 600"class="nav-link" href="newPaiment.php?admin=<?php echo $_GET['admin'];?>">
