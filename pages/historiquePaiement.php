@@ -48,7 +48,7 @@
                                             <td>$row[idPaiement]</td>
                                             <td>$row[montant]</td>
                                             <td>$row[datePaiement]</td>
-                                            <td><a href=''><i class='fas fa-cloud-download-alt'></i></a></td>
+                                            <td><a href='../controls/DownloadPaiement.php?id=$row[idPaiement]'><i class='fas fa-cloud-download-alt'></i></a></td>
                                         </tr>
                                           ";
                         }
