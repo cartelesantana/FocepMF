@@ -24,33 +24,45 @@
                     <table id="datatablesSimple">
                         <thead>
                         <tr>
-                            <th>Matricule</th>
-                            <th>Nom</th>
-                            <th>Date</th>
+                            <th>Id Emprunt</th>
+                            <th>ID Employé</th>
+                            <th>ID Membre</th>
+                            <th>Date de L'emprunt</th>
+                            <th>Date Limite de paiement</th>
                             <th>Montant</th>
-                            <th>Date limite</th>
-                            <th>status</th>
+                            <th>statut</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
-                            <th>Matricule</th>
-                            <th>Nom</th>
-                            <th>Date</th>
+                        <th>Id Emprunt</th>
+                            <th>ID Employé</th>
+                            <th>ID Membre</th>
+                            <th>Date de L'emprunt</th>
+                            <th>Date Limite de paiement</th>
                             <th>Montant</th>
-                            <th>Date limite</th>
-                            <th>status</th>
+                            <th>statut</th>
                         </tr>
                         </tfoot>
                         <tbody>
-                        <tr>
-                            <td>#</td>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td><b>Impayé</b></td>
-                        </tr>
+                        <?php
+                        include "../controls/db.php";
+                        $emprunt= $pdo->query("select * from emprunt  order by dateEmprunt DESC ");
+                        foreach($emprunt as $row) {
+                            echo "
+                                        <tr>
+                                            <td>$row[idEmprunt]</td>
+                                            <td>$row[matricule]</td>
+                                            <td>$row[idMembre]</td>
+                                            <td>$row[dateEmprunt]</td>
+                                            <td>$row[dateLimite]</td>
+                                            <td>$row[montant]</td>
+                                            <td>$row[statut]</td>
+                                            
+                                        </tr>
+                                          ";
+                        }
+                        ?>
 
                         </tbody>
                     </table>
