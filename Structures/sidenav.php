@@ -10,7 +10,7 @@
                         Dashboard
                     </a>
                     
-                    <a class="nav-link" href="newCollecte.php" style="color: darkblue;font-weight: 600">
+                    <a class="nav-link" href="planifierCollecte.php?admin=<?php echo $_GET['admin'];?>" style="color: darkblue;font-weight: 600">
                         <div class="sb-nav-link-icon"><i class="far fa-list-alt" style="color: darkblue"></i></div>
                         Collecte du jour
                     </a>

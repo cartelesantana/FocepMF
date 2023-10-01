@@ -47,7 +47,7 @@
                         <tbody>
                         <?php
                         include "../controls/db.php";
-                        $emprunt= $pdo->query("select * from emprunt  order by dateEmprunt DESC ");
+                        $emprunt= $pdo->query("select * from emprunt where statut='impayer' order by dateEmprunt DESC ");
                         foreach($emprunt as $row) {
                             echo "
                                         <tr>

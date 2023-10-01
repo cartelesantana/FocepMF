@@ -21,25 +21,22 @@
                     formulaire d'emprunt
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form method="post" action="../controls/newEmprunt.php?admin=<?php echo $_GET['admin']?>">
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Entrez le nom" />
+                                    <input class="form-control" name="inputFirstName" type="text" placeholder="Entrez le nom" />
                                     <label for="inputFirstName">Nom</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input class="form-control" id="matricule" type="text" placeholder="Matricule" />
+                                    <input class="form-control" name="matricule" type="text" placeholder="Matricule" />
                                     <label for="matricule">Matricule</label>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="inputEmail"name="inputEmail" type="email" placeholder="name@example.com" />
-                            <label for="inputEmail">Email address</label>
-                        </div>
+                        
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
@@ -49,8 +46,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control" id="motif"name="motif" type="text" placeholder="motif" />
-                                    <label for="motif">Motif</label>
+                                    <input class="form-control" id="inputEmail"name="inputEmail" type="email" placeholder="Email" />
+                                    <label for="Email">Email</label>
                                 </div>
                             </div>
                         </div>

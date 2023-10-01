@@ -1,6 +1,6 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark " style="background: #0D6EFD">
     <!-- Navbar Brand-->
-    <img src="../assets/img/logo.jpg"alt="Logo" style="border-radius:100%;height: 40px;width=40px;margin-left: 5px ">
+    <img src="../assets/img/logo.jpg"alt="Logo" style="border-radius:100%;height: 40px;width:40px;margin-left: 5px ">
     <a class="navbar-brand ps-3" href="index.html" >Focep Micro Finance</a>
     <!-- Sidebar Toggle-->
     <button style="color: white" class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>

@@ -58,18 +58,32 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Bill</th>
-                            <th>Payment Date</th>
-                            <th>Payment Status</th>
+                            <th>Localisation</th>
+                            <th>Date</th>
+                            <th>Nombre de Membre</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="table-primary">
-                            <td>1</td>
-                            <td>Credit Card</td>
-                            <td>04/07/2021</td>
-                            <td>Waiting for statement</td>
-                        </tr>
+                        <?php
+                                    include "../controls/db.php";
+                                    $agent=$_GET['agent'];
+                                    $date=date('y-m-d');
+                                    $planifier= $pdo->query("select * from planification where matriculeAgt='$agent' and dateCol='$date'");
+                                  //  $getPlan=$planifier->fetch();
+                                    //$loc=$planifier->fetchColumn(1);                                        
+                                    foreach($planifier as $plan) {
+                                    
+                                      $countLocalisation=$pdo->query("select count(*) from membre where localisation='$plan[localisation]'")->fetchColumn();
+                                            echo "
+                                            <tr>
+                                                <td>$agent</td>
+                                                <td>$plan[localisation]</td>
+                                                <td>$plan[dateCol]</td>
+                                                <td>$countLocalisation</td>
+                                            </tr>
+                                            ";
+                                        }
+                                    ?>
                         </tbody>
                     </table>
                 </div>

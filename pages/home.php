@@ -54,7 +54,7 @@
                                             </h2>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between" style="font-weight: 800">
-                                        <a  class="small text-white stretched-link" href="#">Voir Plus</a>
+                                        <a  class="small text-white stretched-link" href="../pages/consultMember.php?admin=<?php echo $_GET['admin']?>">Voir Plus</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -65,16 +65,17 @@
                                         <i class="fas fa-money-bill-alt"></i>
                                         <br>Paiements Recents<br>
                                         <h2>
-                                            <?php
+                                        <?php
                                             include "../controls/db.php";
                                             $date=date('yyyy/mm/dd');
-                                            $PaiementQuery= $pdo->exec("select count(*) from paiement where $date > datePaiement<=$date-5 ");
-                                            echo $PaiementQuery;
+                                            $PaymentQuery="select count(*) from paiement where datePaiement='$date'";
+                                            $totalpaiement=$pdo->query($PaymentQuery);
+                                            print_r($totalpaiement->fetchColumn());
                                             ?>
                                         </h2>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between" style="font-weight: 800">
-                                        <a  class="small text-white stretched-link" href="#">Voir Plus</a>
+                                        <a  class="small text-white stretched-link" href="../pages/historiquePaiement.php?admin=<?php echo $_GET['admin']?>">Voir Plus</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -85,16 +86,17 @@
                                         <i class="fas fa-money-check-alt"></i><br>
                                         Emprunts Impayés<br>
                                         <h2>
-                                            <?php
+                                        <?php
                                             include "../controls/db.php";
                                             $date=date('yyyy/mm/dd');
-                                            $EmpruntQuery= $pdo->exec("select count(*) from emprunt where statut='impayé'");
-                                            echo $EmpruntQuery;
+                                            $EmpruntQuery="select count(*) from emprunt where statut='impayer'";
+                                            $totalimpayer=$pdo->query($EmpruntQuery);
+                                            print_r($totalimpayer->fetchColumn());
                                             ?>
                                         </h2>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between" style="font-weight: 800">
-                                        <a  class="small text-white stretched-link" href="#">Voir Plus</a>
+                                        <a  class="small text-white stretched-link" href="../pages/impaye.php?admin=<?php echo $_GET['admin']?>">Voir Plus</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
